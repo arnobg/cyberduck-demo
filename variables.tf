@@ -554,6 +554,8 @@ variable "rds_username" {
   default     = "master"
 }
 
+variable "rds_password" {}
+
 variable "rds_port" {
   description = "Aurora database service port"
   type        = number

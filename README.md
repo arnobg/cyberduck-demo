@@ -45,14 +45,16 @@ Instead of reinventing the wheel, the terraform code I have written, makes use o
 We can add more modules in the sub-folders if needed.Example
 
 cyberduck-demo-project/
-├── alb.tf
-├── asg.tf
-│── rds.tf
-│── main.tf
-│── backend.tf
-│── variables.tf
-│── vpc.tf
-│── terraform.tfvars
+  ├── alb.tf
+  ├── asg.tf
+  │── rds.tf
+  │── main.tf
+  │── backend.tf
+  │── variables.tf
+  │── vpc.tf
+  │── terraform.tfvars
+  
+  
 
 
 

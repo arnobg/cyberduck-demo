@@ -2,7 +2,7 @@
 variable "region" {
   description = "Region code"
   type        = string
-  default     = "eu-west-1"
+  default     = "us-east-1"
 }
 
 # VPC variables

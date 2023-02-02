@@ -17,7 +17,7 @@ As part of the exercise, I have considered high availability and performance to 
 
 
 ![Web App Reference Architecture_2d](https://user-images.githubusercontent.com/78933256/216273438-cb72b54f-9244-4e96-8a4b-cacb8040e80c.png)
-
+Diagram generated via cloudcraft
 
 We will need the solution to be highly available and using Aurora RDS will provide us with the best High Avaiability solution.
 Also, another primary reason we have chosen to go with Aurora RDS instead of the MySQL Multi-AZ RDS option is the performance benefits which Aurora provides. Given that this will be serving an ecommerce website , performance will be a very important factor for business and Aurora RDS for MySQL provides 5x better performance compared to the MySQL RDS. 

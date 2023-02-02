@@ -46,7 +46,7 @@ resource "aws_rds_cluster" "auroradb" {
   engine_version                  = var.rds_engine_version
   database_name                   = var.rds_db_name
   master_username                 = var.rds_username
-  master_password                 = "barbut8chars"
+  master_password                 = var.rds_password
   port                            = var.rds_port
   enabled_cloudwatch_logs_exports = var.rds_enabled_cloudwatch_logs_exports
   db_subnet_group_name            = module.vpc.database_subnet_group

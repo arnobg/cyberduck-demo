@@ -25,12 +25,12 @@ Also, another primary reason we have chosen to go with Aurora RDS instead of the
 Other features which can be considered as factors and configured easily on top of the current Aurora RDS infrastructure:
 
 Read Replicas - If the application is having a high volume of read requests to the database, we can easily provision Read Replicas to segregate and improve the performance of all read requests made. 
- – Performance insights - We can use this to get a better understanding of the performance 
- - Can use Aurora Global database to span across multiple AWS regions and provide high latency to end users.
- – Scales automatically to keep up with your applications.
- – Can make six copies of your data, distributed across multiple locations and continuously backed up to Amazon S3.
- – Transparently recovers from storage failures
- – Best RTO / RPO 
+Performance insights - We can use this to get a better understanding of the performance 
+Can use Aurora Global database to span across multiple AWS regions and provide high latency to end users.
+Scales automatically to keep up with your applications.
+Can make six copies of your data, distributed across multiple locations and continuously backed up to Amazon S3.
+Transparently recovers from storage failures
+Best RTO / RPO 
 
 I have designed the stack to use a frontend application load balancer which is configured to serve the auto-scaling group of EC2 instances (Can call this as the web-tier). Current configuration is set to 3 as per desired capacity ( 1 per AZ) . We can tweak the ASG values as per requirements and plan to scale up/down based on CloudWatch alarms (currently no alarms configured)
 The second layer, which is the application logic layer, is also configured to use an application load balancer which is onfigured to serve the auto-scaling group of EC2 instances (Can call this as the app-tier). Current configuration is set to 3 as per desired capacity ( 1 per AZ). 

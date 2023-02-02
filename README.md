@@ -32,7 +32,6 @@ Other features which can be considered as factors and configured easily on top o
 – Transparently recovers from storage failures
 – Best RTO / RPO 
 
-
 I have designed the stack to use a frontend application load balancer which is configured to serve the auto-scaling group of EC2 instances (Can call this as the web-tier). Current configuration is set to 3 as per desired capacity ( 1 per AZ) . We can tweak the ASG values as per requirements and plan to scale up/down based on CloudWatch alarms (currently no alarms configured)
 The second layer, which is the application logic layer, is also configured to use an application load balancer which is onfigured to serve the auto-scaling group of EC2 instances (Can call this as the app-tier). Current configuration is set to 3 as per desired capacity ( 1 per AZ). 
 

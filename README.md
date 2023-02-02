@@ -24,13 +24,13 @@ Also, another primary reason we have chosen to go with Aurora RDS instead of the
 
 Other features which can be considered as factors and configured easily on top of the current Aurora RDS infrastructure:
 
- – Read Replicas - If the application is having a high volume of read requests to the database, we can easily provision Read Replicas to segregate and improve the performance of all read requests made. 
+ – Read Replicas - If the application is having a high volume of read requests to the database, we can easily provision Read Replicas to segregate and        improve the performance of all read requests made. 
  – Performance insights - We can use this to get a better understanding of the performance 
  - Can use Aurora Global database to span across multiple AWS regions and provide high latency to end users.
  – Scales automatically to keep up with your applications.
  – Can make six copies of your data, distributed across multiple locations and continuously backed up to Amazon S3.
-– Transparently recovers from storage failures
-– Best RTO / RPO 
+ – Transparently recovers from storage failures
+ – Best RTO / RPO 
 
 I have designed the stack to use a frontend application load balancer which is configured to serve the auto-scaling group of EC2 instances (Can call this as the web-tier). Current configuration is set to 3 as per desired capacity ( 1 per AZ) . We can tweak the ASG values as per requirements and plan to scale up/down based on CloudWatch alarms (currently no alarms configured)
 The second layer, which is the application logic layer, is also configured to use an application load balancer which is onfigured to serve the auto-scaling group of EC2 instances (Can call this as the app-tier). Current configuration is set to 3 as per desired capacity ( 1 per AZ). 
@@ -40,20 +40,9 @@ If the ecommerce website users are distributed globally , we can configure our s
 We can configure the launch templates for the ASGs, to use application specific user data and customize our code further.
 
 Instead of reinventing the wheel, the terraform code I have written, makes use of certain AWS terraform modules , such as VPC, Security Group, ALB, Auto-Scaling Groups. I have also made use of the S3 backend inorder to manage the terraform state file locking. (This is optional, I have a habit of using this in my current workplace). Currently I have commented out the backend.tf file and this can be setup if necessary (We will then need to setup the bucket and a dynamoDB table). Without it in use, we will have the terraform state file managed locally. Please choose to use .gitignore file to make sure the terraform state file is not uploaded into Github repository.
-
-We can add more modules in the sub-folders if needed.Example
-
-cyberduck-demo-project/
-  ├── alb.tf
-  ├── asg.tf
-  │── rds.tf
-  │── main.tf
-  │── backend.tf
-  │── variables.tf
-  │── vpc.tf
-  │── terraform.tfvars
+Inorder to securely pass sensitive information, such as RDS passwords, we need to ensure no sensitive data is shared via any of the terraform configuration files. We can have AWS Secrets Manager configured to securely pass any such secrets.
   
-  
+
 
 
 

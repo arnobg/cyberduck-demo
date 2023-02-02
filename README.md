@@ -13,6 +13,12 @@ SOLUTION:
 
 As part of the exercise, I have considered high availability and performance to be the major factors (rather than cost which is not mentioned). This will deploy the below three tier architechture on AWS , using Aurora RDS with MySQL DB engine as our database service. 
 
+![Web App Reference Architecture](https://user-images.githubusercontent.com/78933256/216273290-5e360b4e-264d-4cc7-aab8-0a5eeda3fb27.png)
+
+
+![Web App Reference Architecture_2d](https://user-images.githubusercontent.com/78933256/216273438-cb72b54f-9244-4e96-8a4b-cacb8040e80c.png)
+
+
 We will need the solution to be highly available and using Aurora RDS will provide us with the best High Avaiability solution.
 Also, another primary reason we have chosen to go with Aurora RDS instead of the MySQL Multi-AZ RDS option is the performance benefits which Aurora provides. Given that this will be serving an ecommerce website , performance will be a very important factor for business and Aurora RDS for MySQL provides 5x better performance compared to the MySQL RDS. 
 

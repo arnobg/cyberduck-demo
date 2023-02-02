@@ -40,9 +40,19 @@ If the ecommerce website users are distributed globally , we can configure our s
 
 We can configure the launch templates for the ASGs, to use application specific user data and customize our code further.
 
-Instead of reinventing the wheel, the terraform code I have written, makes use of certain AWS terraform modules , such as VPC, Security Group, ALB, Auto-Scaling Groups. I have also made use of the S3 backend inorder to manage the terraform state file locking. (This is optional, I have a habit of using this in my current workplace) . Currently I have commented out the backend tf file and this can be setup if necessary (We will then need to setup the bucket and a dynamoDB table). Without it in use, we will have the terraform state file managed locally.
+Instead of reinventing the wheel, the terraform code I have written, makes use of certain AWS terraform modules , such as VPC, Security Group, ALB, Auto-Scaling Groups. I have also made use of the S3 backend inorder to manage the terraform state file locking. (This is optional, I have a habit of using this in my current workplace). Currently I have commented out the backend.tf file and this can be setup if necessary (We will then need to setup the bucket and a dynamoDB table). Without it in use, we will have the terraform state file managed locally. Please choose to use .gitignore file to make sure the terraform state file is not uploaded into Github repository.
 
+We can add more modules in the sub-folders if needed.Example
 
+cyberduck-demo-project/
+├── alb.tf
+├── asg.tf
+│── rds.tf
+│── main.tf
+│── backend.tf
+│── variables.tf
+│── vpc.tf
+│── terraform.tfvars
 
 
 

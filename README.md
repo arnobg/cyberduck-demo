@@ -24,7 +24,7 @@ Also, another primary reason we have chosen to go with Aurora RDS instead of the
 
 Other features which can be considered as factors and configured easily on top of the current Aurora RDS infrastructure:
 
- – Read Replicas - If the application is having a high volume of read requests to the database, we can easily provision Read Replicas to segregate and        improve the performance of all read requests made. 
+Read Replicas - If the application is having a high volume of read requests to the database, we can easily provision Read Replicas to segregate and improve the performance of all read requests made. 
  – Performance insights - We can use this to get a better understanding of the performance 
  - Can use Aurora Global database to span across multiple AWS regions and provide high latency to end users.
  – Scales automatically to keep up with your applications.
